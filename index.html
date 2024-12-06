@@ -73,10 +73,103 @@
             margin-bottom: 2rem;
             line-height: 1.6;
         }
-        .about, .impact {
+        .about, .impact, .contact {
             margin: 2rem 0;
             padding: 1rem;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
-            max-width: 
+            max-width: 800px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .about:hover, .impact:hover, .contact:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            width: 100%;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        footer p {
+            margin: 0.5rem 0;
+        }
+        footer a {
+            color: #00539f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #003f7f;
+        }
+        .contact-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #00539f;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-button:hover {
+            background-color: #003f7f;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="KPC LOGO-1.PNG" alt="Foundation Logo" class="logo">
+</header>
+
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#impact">Our Impact</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<div class="content">
+    <!-- Description section -->
+    <h2>Who We Serve</h2>
+    <p class="description">Our mission is to support those in need. We strive to make a positive impact in your community, offering resources, assistance, and a platform for change.</p>
+
+    <!-- About Us Section -->
+    <div id="about" class="about">
+        <h3>About Us</h3>
+        <p>The Kevin P Crampton Foundation is dedicated to empowering communities and fostering positive change. Our mission is to support underprivileged communities by providing resources for education, health, and sustainable development.</p>
+        <p>We partner with local organizations to implement impactful programs that address the unique needs of each community we serve. Our team is passionate about creating opportunities for growth and development, ensuring that every individual has the chance to thrive.</p>
+        <p>We believe in the power of collaboration and work tirelessly to bring together individuals, businesses, and other nonprofits to create a network of support and innovation. Join us in our mission to make a lasting difference in the world.</p>
+    </div>
+
+    <!-- Our Impact Section -->
+    <div id="impact" class="impact">
+        <h3>Our Impact</h3>
+        <p>Discover the difference we are making in the community through our various programs and initiatives.</p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact" class="contact">
+        <h3>Contact Us</h3>
+        <p>For inquiries, please email us directly:</p>
+        <a href="mailto:support@crampton.org" class="contact-button">Send an Email</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 The Kevin P Crampton Foundation. All rights reserved.</p>
+    <p><a href="#about">About Us</a> | <a href="#impact">Our Impact</a> | <a href="#contact">Contact Us</a></p>
+</footer>
+
+</body>
+</html>
