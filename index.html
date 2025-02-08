@@ -1,177 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kevin P Crampton Foundation</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-        }
-        header {
-            width: 100%;
-            background-color: white;
-            text-align: center;
-            padding: 0.5rem 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        header .logo {
-            max-width: 300px;
-            margin: 0.5rem 0;
-            transition: transform 0.3s ease;
-        }
-        header .logo:hover {
-            animation: none;
-            transform: none;
-            transition: none;
-        }
-        nav {
-            background-color: #003f7f;
-            width: 100%;
-            text-align: center;
-            padding: 0.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #ffcc00;
-        }
-        .content {
-            max-width: 800px;
-            padding: 2rem;
-            text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-        h1, h2, h3 {
-            color: #00539f;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .description {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        .about, .impact, .contact {
-            margin: 2rem 0;
-            padding: 1rem;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 800px;
-            text-align: left;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .about:hover, .impact:hover, .contact:hover {
-            transform: translateY(-5px);
-        }
-        footer {
-            width: 100%;
-            background-color: #f9f9f9;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        footer p {
-            margin: 0.5rem 0;
-        }
-        footer a {
-            color: #00539f;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        footer a:hover {
-            color: #003f7f;
-        }
-        .contact-button {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.7rem 1.5rem;
-            background-color: #00539f;
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .contact-button:hover {
-            background-color: #003f7f;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Kevin P Crampton Foundation</title>
+  <meta name="description" content="The Kevin P. Crampton Foundation empowers communities through education, health, and sustainable development.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    /* Global Reset and Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      line-height: 1.6;
+    }
+    /* Header */
+    header {
+      width: 100%;
+      background-color: #fff;
+      text-align: center;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header .logo {
+      max-width: 300px;
+      margin: 0.5rem 0;
+      transition: transform 0.3s ease;
+    }
+    header .logo:hover {
+      transform: none;
+    }
+    /* Navigation */
+    nav {
+      width: 100%;
+      background-color: #003f7f;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-links a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: #ffcc00;
+      outline: 2px solid #ffcc00;
+    }
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        display: none;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    /* Main Content */
+    main {
+      max-width: 800px;
+      width: 100%;
+      padding: 2rem;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    h1, h2, h3 {
+      color: #00539f;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .description {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    /* Sections */
+    section {
+      margin: 2rem 0;
+      padding: 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: left;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    section:hover {
+      transform: translateY(-5px);
+    }
+    /* Spacing between paragraphs in the About Section */
+    #about p {
+      margin-bottom: 1rem;
+    }
+    /* Contact Button - Inline-Block and Centered */
+    .contact-button {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.7rem 1.5rem;
+      background-color: #00539f;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-button:hover,
+    .contact-button:focus {
+      background-color: #003f7f;
+      outline: 2px solid #ffcc00;
+    }
+    /* Container for Centering the Button */
+    .button-container {
+      text-align: center;
+    }
+    /* Footer */
+    footer {
+      width: 100%;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid #ccc;
+    }
+    footer p {
+      margin: 0.5rem 0;
+    }
+    footer a {
+      color: #00539f;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    footer a:hover,
+    footer a:focus {
+      color: #003f7f;
+      outline: 2px solid #ffcc00;
+    }
+    /* Fade In Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Responsive Typography */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .description {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-    <img src="KPC LOGO-1.PNG" alt="Foundation Logo" class="logo">
-</header>
-
-<nav>
-    <a href="#about">About Us</a>
-    <a href="#impact">Our Impact</a>
-    <a href="#contact">Contact Us</a>
-</nav>
-
-<div class="content">
-    <!-- Description section -->
+  <!-- Header -->
+  <header>
+    <img src="KPC LOGO-1.PNG" alt="The Kevin P. Crampton Foundation Logo" class="logo">
+  </header>
+  <!-- Navigation -->
+  <nav>
+    <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+    <div class="nav-links">
+      <a href="#about">About Us</a>
+      <a href="#impact">Our Impact</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </nav>
+  <!-- Main Content -->
+  <main>
+    <h1>The Kevin P. Crampton Foundation</h1>
     <h2>Who We Serve</h2>
     <p class="description">Our mission is to support those in need. We strive to make a positive impact in your community, offering resources, assistance, and a platform for change.</p>
-
-    <!-- About Us Section -->
-    <div id="about" class="about">
-        <h3>About Us</h3>
-        <p>The Kevin P. Crampton Foundation is dedicated to empowering communities and fostering positive change. Our mission is to support underprivileged communities by providing resources for education, health, and sustainable development.</p>
-        <p>We partner with local organizations to implement impactful programs that address the unique needs of each community we serve. Our team is passionate about creating opportunities for growth and development, ensuring that every individual has the chance to thrive.</p>
-        <p>We believe in the power of collaboration and work tirelessly to bring together individuals, businesses, and other nonprofits to create a network of support and innovation. Join us in our mission to make a lasting difference in the world.</p>
-    </div>
-
-    <!-- Our Impact Section -->
-    <div id="impact" class="impact">
-        <h3>Our Impact</h3>
-        <p>Discover the difference we are making in the community through our various programs and initiatives.</p>
-    </div>
-
-    <!-- Contact Us Section -->
-    <div id="contact" class="contact">
-        <h3>Contact Us</h3>
-        <p>For inquiries, please email us directly:</p>
+    
+    <!-- About Section -->
+    <section id="about">
+      <h3>About Us</h3>
+      <p>The Kevin P. Crampton Foundation is dedicated to empowering communities and fostering positive change. Our mission is to support underprivileged communities by providing resources for education, health, and sustainable development.</p>
+      <p>We partner with local organizations to implement impactful programs that address the unique needs of each community we serve. Our team is passionate about creating opportunities for growth and development, ensuring that every individual has the chance to thrive.</p>
+      <p>We believe in the power of collaboration and work tirelessly to bring together individuals, businesses, and other nonprofits to create a network of support and innovation. Join us in our mission to make a lasting difference in the world.</p>
+    </section>
+    
+    <!-- Impact Section -->
+    <section id="impact">
+      <h3>Our Impact</h3>
+      <p>Discover the difference we are making in the community through our various programs and initiatives. Stay tuned for updates and success stories as we continue our journey of positive change.</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+      <h3>Contact Us</h3>
+      <p>For inquiries, please email us directly:</p>
+      <div class="button-container">
         <a href="mailto:support@crampton.org" class="contact-button">Send an Email</a>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 The Kevin P. Crampton Foundation. All rights reserved.</p>
-    <p><a href="#about">About Us</a> | <a href="#impact">Our Impact</a> | <a href="#contact">Contact Us</a></p>
-</footer>
-
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 The Kevin P Crampton Foundation. All rights reserved.</p>
+    <p>
+      <a href="#about">About Us</a> | 
+      <a href="#impact">Our Impact</a> | 
+      <a href="#contact">Contact Us</a>
+    </p>
+  </footer>
+  <script>
+    // Hamburger Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
