@@ -1,256 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Kevin P Crampton Foundation</title>
-  <meta name="description" content="The Kevin P. Crampton Foundation empowers communities through education, health, and sustainable development.">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    /* Global Reset and Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333;
-      background-color: #f9f9f9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      line-height: 1.6;
-    }
-    /* Header */
-    header {
-      width: 100%;
-      background-color: #F8F6F4;
-      text-align: center;
-      padding: 0.5rem 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header .logo {
-      max-width: 250px;
-      margin: 0.5rem 0;
-      transition: transform 0.3s ease;
-    }
-    header .logo:hover {
-      transform: none;
-    }
-    /* Navigation */
-    nav {
-      width: 100%;
-      background-color: #003f7f;
-      color: white;
-      text-align: center;
-      padding: 0.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: white;
-      cursor: pointer;
-    }
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .nav-links a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: #ffcc00;
-      outline: 2px solid #ffcc00;
-    }
-    @media (max-width: 600px) {
-      .nav-links {
-        flex-direction: column;
-        display: none;
-      }
-      .nav-links.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-    /* Main Content */
-    main {
-      max-width: 800px;
-      width: 100%;
-      padding: 2rem;
-      text-align: center;
-      animation: fadeIn 1s ease-in-out;
-    }
-    h1, h2, h3 {
-      color: #00539f;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 2.5rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-    .description {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    /* Sections */
-    section {
-      margin: 2rem 0;
-      padding: 1rem;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      text-align: left;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    section:hover {
-      transform: translateY(-5px);
-    }
-    /* Spacing between paragraphs in the About Section */
-    #about p {
-      margin-bottom: 1rem;
-    }
-    /* Contact Button - Inline-Block and Centered */
-    .contact-button {
-      display: inline-block;
-      margin: 1rem 0;
-      padding: 0.7rem 1.5rem;
-      background-color: #00539f;
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .contact-button:hover,
-    .contact-button:focus {
-      background-color: #003f7f;
-      outline: 2px solid #ffcc00;
-    }
-    /* Container for Centering the Button */
-    .button-container {
-      text-align: center;
-    }
-    /* Footer */
-    footer {
-      width: 100%;
-      background-color: #f9f9f9;
-      text-align: center;
-      padding: 1rem 0;
-      border-top: 1px solid #ccc;
-    }
-    footer p {
-      margin: 0.5rem 0;
-    }
-    footer a {
-      color: #00539f;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    footer a:hover,
-    footer a:focus {
-      color: #003f7f;
-      outline: 2px solid #ffcc00;
-    }
-    /* Fade In Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    /* Responsive Typography */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      .description {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <title>The Kevin P. Crampton Foundation | Empowering Communities</title>
+  <meta name="description"
+    content="The Kevin P. Crampton Foundation empowers communities through education, health, and sustainable development. Join us in making a difference.">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+
   <!-- Header -->
   <header>
-    <img src="KPC LOGO-1.PNG" alt="The Kevin P. Crampton Foundation Logo" class="logo">
-  </header>
-  <!-- Navigation -->
-  <nav>
-    <button class="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-    <div class="nav-links">
-      <a href="#about">About Us</a>
-      <a href="#impact">Our Impact</a>
-      <a href="#contact">Contact Us</a>
+    <div class="container navbar">
+      <a href="#" class="logo-container">
+        <img src="assets/images/logo.png" alt="Kevin P. Crampton Foundation Logo">
+      </a>
+
+      <button class="hamburger" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#programs">Programs</a>
+        <a href="#get-involved">Get Involved</a>
+      </nav>
     </div>
-  </nav>
-  <!-- Main Content -->
-  <main>
-    <h2>The Kevin P. Crampton Foundation</h2>
-    <h3>Who We Serve</h3>
-    <p class="description">Our mission is to support those in need. We strive to make a positive impact in your community, offering resources, assistance, and a platform for change.</p>
-    
-    <!-- About Section -->
-    <section id="about">
-      <h3>About Us</h3>
-      <p>The Kevin P. Crampton Foundation is dedicated to empowering communities and fostering positive change. Our mission is to support underprivileged communities by providing resources for education, health, and sustainable development.</p>
-      <p>We partner with local organizations to implement impactful programs that address the unique needs of each community we serve. Our team is passionate about creating opportunities for growth and development, ensuring that every individual has the chance to thrive.</p>
-      <p>We believe in the power of collaboration and work tirelessly to bring together individuals, businesses, and other nonprofits to create a network of support and innovation. Join us in our mission to make a lasting difference in the world.</p>
-    </section>
-    
-    <!-- Impact Section -->
-    <section id="impact">
-      <h3>Our Impact</h3>
-      <p>Discover the difference we are making in the community through our various programs and initiatives. Stay tuned for updates and success stories as we continue our journey of positive change.</p>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-      <h3>Contact Us</h3>
-      <p>For inquiries, please email us directly:</p>
-      <div class="button-container">
-        <a href="mailto:support@crampton.org" class="contact-button">Send an Email</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Building Resilient Communities<br>For Future Generations</h1>
+      <p>The Kevin P. Crampton Foundation strategically invests in education, health equity, and sustainable development
+        to foster long-term systemic change.</p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-accent"
+          style="background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color);">Our
+          Vision</a>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Mission & About Section -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto 6rem; text-align: center;">
+        <h2 class="mb-4" style="font-size: 2.5rem;">Who We Are</h2>
+        <p class="mb-4" style="font-size: 1.1rem; color: var(--text-dark);">
+          Established with a vision of enduring impact, the Kevin P. Crampton Foundation operates at the intersection
+          of compassion and innovation. We refuse to accept the status quo of inequality, instead choosing to build
+          pathways where none existed.
+        </p>
+        <p style="font-size: 1.1rem; color: var(--text-light);">
+          Our approach is holistic and data-driven. By partnering with local leaders and leveraging global best
+          practices, we ensure that every dollar invested yields tangible, sustainable improvements in the lives we
+          touch.
+        </p>
+      </div>
+
+      <div class="section-header text-center mb-4">
+        <h2 style="font-size: 2rem;">Our Pillars of Change</h2>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="mb-4"><i class="fas fa-graduation-cap fa-2x" style="color: var(--secondary-color);"></i></div>
+          <h4 style="font-size: 1.25rem; font-weight: 700;">Educational Access</h4>
+          <p style="color: var(--text-light);">Bridging the digital divide and providing scholarship opportunities to
+            unlock the potential of the next generation.</p>
+        </div>
+        <div class="card">
+          <div class="mb-4"><i class="fas fa-heartbeat fa-2x" style="color: var(--secondary-color);"></i></div>
+          <h4 style="font-size: 1.25rem; font-weight: 700;">Health Equity</h4>
+          <p style="color: var(--text-light);">Investing in community clinics and preventative care programs to ensure
+            health is a right, not a privilege.</p>
+        </div>
+        <div class="card">
+          <div class="mb-4"><i class="fas fa-leaf fa-2x" style="color: var(--secondary-color);"></i></div>
+          <h4 style="font-size: 1.25rem; font-weight: 700;">Sustainability</h4>
+          <p style="color: var(--text-light);">Supporting eco-friendly innovation and infrastructure that creates
+            economic opportunity while protecting our planet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Call to Action -->
+  <section id="get-involved" class="section-padding"
+    style="background-color: var(--primary-color); color: white; text-align: center;">
+    <div class="container">
+      <h2 style="color: white; margin-bottom: 1rem;">Join Our Movement</h2>
+      <p style="max-width: 600px; margin: 0 auto var(--spacing-md); opacity: 0.9;">
+        Whether through volunteering, donating, or spreading the word, your support is the catalyst for change.
+      </p>
+      <a href="#contact" class="btn btn-accent">Get Involved Today</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding">
+    <div class="container text-center">
+      <h2>Contact Us</h2>
+      <p class="mb-4" style="color: var(--text-light);">Have questions or want to partner with us? Reach out directly.
+      </p>
+      <a href="mailto:support@crampton.org" class="btn btn-primary">
+        <i class="fas fa-envelope"></i> Email Us: support@crampton.org
+      </a>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 The Kevin P Crampton Foundation. All rights reserved.</p>
-    <p>
-      <a href="#about">About Us</a> | 
-      <a href="#impact">Our Impact</a> | 
-      <a href="#contact">Contact Us</a>
-    </p>
+    <div class="container">
+      <div class="footer-grid" style="grid-template-columns: 1fr 1fr; max-width: 800px; margin: 0 auto; gap: 4rem;">
+        <div class="footer-col">
+          <!-- Removed filter to show actual logo colors -->
+          <img src="assets/images/logo.png" alt="KPC Logo" style="height: 50px; margin-bottom: 1rem;">
+          <p style="opacity: 0.8; font-size: 0.9rem;">Empowering communities through compassion and action.</p>
+        </div>
+        <div class="footer-col" style="text-align: right;">
+          <h4>Quick Links</h4>
+          <ul style="display: flex; gap: 1.5rem; justify-content: flex-end;">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; <span class="copyright-year">2025</span> The Kevin P. Crampton Foundation. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
-  <script>
-    // Hamburger Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>
