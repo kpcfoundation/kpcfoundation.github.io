@@ -1,13 +1,31 @@
-// Example of a potential problematic loop
-function appendContent() {
-    const container = document.getElementById('content-container');
-    for (let i = 0; i < 10; i++) {
-        // Ensure this loop has a proper termination condition
-        const newContent = document.createElement('div');
-        newContent.textContent = 'Repeated Content';
-        container.appendChild(newContent);
-    }
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('#navigation');
+
+function closeMenu() {
+  navigation.classList.remove('is-open');
+  menuToggle.setAttribute('aria-expanded', 'false');
 }
 
-// Check if this function is being called repeatedly or incorrectly
-appendContent(); 
+menuToggle.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  navigation.classList.toggle('is-open', !isOpen);
+  menuToggle.setAttribute('aria-expanded', String(!isOpen));
+});
+
+navigation.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menuToggle.focus();
+  }
+});
+
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.site-header')) closeMenu();
+});
+
+window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+document.querySelector('#year').textContent = new Date().getFullYear();
